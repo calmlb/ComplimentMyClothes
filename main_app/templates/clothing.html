@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Clothing List</h1>
+
+{% for clothing in Clothing %}
+  <a href="{% url 'clothing' clothing.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ clothing.name }}</span>
+            <p>Type: {{ clothing.type }}</p>
+            <p>Colour: {{ clothing.colour }}</p>
+            <p>Season: {{ clothing.season }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}

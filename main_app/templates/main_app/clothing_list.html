@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<a href="/games/add" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+{% for game in object_list %}
+<a href="/games/all/{{ game.id }}">
+<div class="card">
+    <div class="card-content">
+    <span class="card-title">{{ game.name }}</span> <br>
+    <p>{{ game.description }}</p>
+    <br>
+    <p>Played: {{ game.time }} hours</p>
+</div>
+</div>
+</a>
+{% endfor %}
+{% endblock %}

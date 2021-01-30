@@ -28,14 +28,3 @@ class Clothing(models.Model):
 
     def __str__(self):
         return self.name
-
-# class Color(models.Model):
-#     # color = models.ForeignKey(Clothing, on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         return self.name
-
-# class ComplimentaryColor(models.Model):
-#     # colors = 
-#     # def __str__(self):
-#     #     return self.name

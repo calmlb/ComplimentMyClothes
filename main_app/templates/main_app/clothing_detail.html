@@ -5,13 +5,12 @@
   <div class="col s6">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ object.name }}</span> <br />
-        <p>Type: {{ object.type }}</p>
+        <span class="card-title">{{ clothing.name }}</span> <br />
+        <p>Type: {{ clothing.type }}</p>
         <br />
-        <p>Color: {{ object.color }}</p>
+        <p>Color: {{ clothing.color }}</p>
       </div>
     </div>
-
     <div class="modify">
     <a href="{% url 'clothing_update' object.id %}" class="amber waves-effect waves-yellow btn-large">Update</a>
     <a href="{% url 'clothing_delete' object.id %}" class="red lighten-1 waves-effect waves-red btn-large">Delete</a>

@@ -6,8 +6,18 @@ from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
+class ClothingCreate(LoginRequiredMixin, CreateView):
+  model = Clothing
+  fields = '__all__'
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user  # form.instance is the photo
+    # Let the CreateView do its job as usual
+    return super().form_valid(form)
+  success_url = reverse_lazy('clothing_all')
+
 def signup(request):
   error_message=""
   if request.method == 'POST':
@@ -27,28 +37,24 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
-@login_required 
-# def Clothing(request):
-#     clothing = Clothing.objects.all()
-#     clothing = Clothing.objects.filter(user=request.user)
-#     return render(request, 'home')
-    
 def home(request):
   clothing = Clothing.objects.filter(user=request.user)
   return render(request, 'home.html')
 
 class ClothingList(ListView):
     model = Clothing
+    template_name = 'clothing_all'
+
+# @login_required 
+# def clothing_user(request):
+#   clothing = Clothing.objects.filter(user=request.user)
+#   return render (request, 'main_app/clothing_detail.html', {'clothing_all': clothing_all})
+    
 
 class ClothingDetail(DetailView):
     model = Clothing
     pk_url_kwarg = "clothing_id"
 
-class ClothingCreate(CreateView):
-    model = Clothing
-    fields = '__all__'
-    success_url = reverse_lazy('clothing_all')
-    
 class ClothingUpdate(UpdateView):
     model = Clothing
     fields = '__all__'

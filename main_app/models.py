@@ -21,10 +21,18 @@ TYPE = (
     #  etc... 
     )
 
+SEASON =(
+    ('spring', 'Spring'),
+    ('summer', 'Summer'),
+    ('fall', 'Fall'),
+    ('winter', 'Winter'),
+    )
+
 class Clothing(models.Model):
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=10, choices=TYPE, default=TYPE[0][0])
     color = models.CharField(max_length=3, choices=COLORS, default=COLORS[0][0])
+    season = models.CharField(max_length=10, choices=SEASON, default=SEASON[0][0])
 
     def __str__(self):
         return self.name

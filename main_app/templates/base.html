@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?{% now "U" %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
 </head>
 <body>
   <header class="navbar-fixed">
@@ -42,5 +43,12 @@
   <footer class="page-footer deep-orange accent-2">
     <div class="right">All Rights Reserved, &copy; 2021 ComplimentMyClothes &nbsp;</div>
   </footer>
+  <script defer>
+      M.AutoInit();
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, options);
+  });
+  </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Clothing
@@ -19,7 +19,7 @@ def signup(request):
       user = form.save()
       # This is how we log a user in via code
       login(request, user)
-      return redirect('clothing')
+      return redirect('clothing_all')
     else:
       error_message = 'Invalid sign up - try again'
   # A bad POST or a GET request, so render signup.html with an empty form
@@ -28,12 +28,13 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 @login_required 
-def Clothing(request):
-    clothing = Clothing.objects.all()
-    clothing = Clothing.objects.filter(user=request.user)
-    return render(request, 'home')
+# def Clothing(request):
+#     clothing = Clothing.objects.all()
+#     clothing = Clothing.objects.filter(user=request.user)
+#     return render(request, 'home')
     
 def home(request):
+  clothing = Clothing.objects.filter(user=request.user)
   return render(request, 'home.html')
 
 class ClothingList(ListView):

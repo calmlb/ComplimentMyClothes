@@ -44,3 +44,10 @@ class Clothing(models.Model):
   
     def __str__(self):
         return self.name
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    clothing = models.ForeignKey(Clothing, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for clothing_id: {self.clothing_id} @{self.url}"

@@ -35,18 +35,25 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 def home(request):
-  clothing = Clothing.objects.filter(user=request.user)
+  # clothing = Clothing.objects.all()
+  # clothing = Clothing.objects.filter(user=request.user)
   return render(request, 'home.html')
 
 class ClothingList(ListView):
     model = Clothing
     template_name = 'clothing_all'
+    
+    def get_queryset(self):
+      if self.request.user.is_authenticated:
+        return Clothing.objects.filter(user=self.request.user)
+      else:
+        return Clothing.objects.none()
 
 @login_required 
 def clothing_user(request):
   clothing = Clothing.objects.filter(user=request.user)
   return render (request, 'main_app/clothing_detail.html', {'clothing_all': clothing_all})
-    
+
 class ClothingDetail(DetailView):
     model = Clothing
     pk_url_kwarg = "clothing_id"

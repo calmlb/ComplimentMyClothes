@@ -4,11 +4,17 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 COLORS = (
-    ('red', 'Red'),
-    ('blu', 'Blue'),
-    ('ylw', 'Yellow'),
-    ('grn', 'Green'),
-    ('brn', 'Brown')
+    ('Pink', 'Pink'),
+    ('Red', 'Red'),
+    ('Orange', 'Orange'),
+    ('Beige', 'Beige'),
+    ('Yellow', 'Yellow'),
+    ('Green', 'Green'),
+    ('Light Blue', 'Light Blue'),
+    ('Dark Blue', 'Dark Blue'),
+    ('Purple', 'Purple'),
+    ('Brown', 'Brown'),
+    ('Grey', 'Grey')
     )
 
 TYPE = (
@@ -22,7 +28,7 @@ TYPE = (
     #  etc... 
     )
 
-SEASON =(
+SEASON = (
     ('spring', 'Spring'),
     ('summer', 'Summer'),
     ('fall', 'Fall'),
@@ -32,9 +38,20 @@ SEASON =(
 class Clothing(models.Model):
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=10, choices=TYPE, default=TYPE[0][0])
-    color = models.CharField(max_length=3, choices=COLORS, default=COLORS[0][0])
+    color = models.CharField(max_length=10, choices=COLORS, default=COLORS[0][0])
     season = models.CharField(max_length=10, choices=SEASON, default=SEASON[0][0])
     user = models.ForeignKey(User, on_delete=models.CASCADE)
   
 def __str__(self):
     return self.name
+
+    def __str__(self):
+        return self.name
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    clothing = models.ForeignKey(Clothing, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for clothing_id: {self.clothing_id} @{self.url}"
+

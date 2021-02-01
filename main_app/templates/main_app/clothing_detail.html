@@ -17,22 +17,165 @@
    </div>
   </div>
 </div>
+
     {% for photo in clothing.photo_set.all %}
+    <div class="uploaded-image">
       <img class="responsive-img card-panel" src="{{photo.url}}">
+      <a href="{% url 'photo-delete' photo.id %}">Delete</a>
     {% empty %}
       <div class="card-panel teal-text center-align">No Photos Uploaded</div>
     {% endfor %}
-</div>
+  </div>
 
     <form action="{% url 'add_photo' clothing.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
             {% csrf_token %}
             <input type="file" name="photo-file">
             <br><br>
             <input type="submit" class="btn" value="Upload Photo">
+            
+
+
         </form> 
 
+        <h4>Complimentary colors for this item</h4>
+
+<div class="colors">
+
 {% if object.color == 'Orange' %}
-  Complimentary Colors: 
+
+  <div class="fullCircle-green">
+  </div>
+  <div class="fullCircle-light-blue">
+  </div>
+  <div class="fullCircle-dark-blue">
+  </div>
+  <div class="fullCircle-white">
+  </div>
+  <div class="fullCircle-black">
+  </div>
+
+{% elif object.color == 'Yellow' %}
+
+  <div class="fullCircle-green">
+  </div>
+  <div class="fullCircle-dark-blue">
+  </div>
+  <div class="fullCircle-white">
+  </div>
+  <div class="fullCircle-black">
+  </div>
+
+{% elif object.color == 'Pink' %}
+
+<div class="fullCircle-light-blue">
+</div>
+<div class="fullCircle-dark-blue">
+</div>
+<div class="fullCircle-grey">
+</div>
+<div class="fullCircle-white">
+</div>
+<div class="fullCircle-black">
+</div>
+
+{% elif object.color == 'Red' %}
+
+<div class="fullCircle-light-blue">
+</div>
+<div class="fullCircle-dark-blue">
+</div>
+<div class="fullCircle-grey">
+</div>
+<div class="fullCircle-white">
+</div>
+<div class="fullCircle-black">
+</div>
+
+{% elif object.color == 'Beige' %}
+
+<div class="fullCircle-dark-blue">
+</div>
+<div class="fullCircle-purple">
+</div>
+<div class="fullCircle-browm">
+</div>
+<div class="fullCircle-white">
+</div>
+<div class="fullCircle-black">
+</div>
+
+{% elif object.color == 'Green' %}
+
+<div class="fullCircle-orange">
+</div>
+<div class="fullCircle-purple">
+</div>
+<div class="fullCircle-white">
+</div>
+<div class="fullCircle-black">
+</div>
+
+{% elif object.color == 'Light Blue' %}
+
+<div class="fullCircle-pink">
+</div>
+<div class="fullCircle-red">
+</div>
+<div class="fullCircle-orange">
+</div>
+<div class="fullCircle-white">
+</div>
+<div class="fullCircle-black">
+</div>
+
+{% elif object.color == 'Dark Blue' %}
+
+<div class="fullCircle-pink">
+</div>
+<div class="fullCircle-red">
+</div>
+<div class="fullCircle-yellow">
+</div>
+<div class="fullCircle-grey">
+</div>
+<div class="fullCircle-white">
+</div>
+<div class="fullCircle-black">
+</div>
+
+{% elif object.color == 'Purple' %}
+
+<div class="fullCircle-orange">
+</div>
+<div class="fullCircle-grey">
+</div>
+<div class="fullCircle-green">
+</div>
+<div class="fullCircle-white">
+</div>
+<div class="fullCircle-black">
+</div>
+
+{% elif object.color == 'Brown' %}
+
+<div class="fullCircle-beige">
+</div>
+<div class="fullCircle-white">
+</div>
+<div class="fullCircle-black">
+</div>
+
+{% elif object.color == 'Grey' %}
+
+<div class="fullCircle-pink">
+</div>
+<div class="fullCircle-red">
+</div>
+<div class="fullCircle-dark-blue">
+</div>
+<div class="fullCircle-purple">
+</div>
+
 {% endif %}
 </div>
 

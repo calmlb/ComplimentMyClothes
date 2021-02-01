@@ -49,6 +49,12 @@
     var elems = document.querySelectorAll('.carousel');
     var instances = M.Carousel.init(elems, options);
   });
+
+  autoplay()   
+function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 4500);
+}
   </script>
 </body>
 </html>

@@ -8,6 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 import uuid
 import boto3
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'cmc-4'
@@ -65,6 +66,8 @@ class ClothingUpdate(UpdateView):
     template_name_suffix = '_update_form'
     success_url = reverse_lazy('clothing_all')
 
+
+
 class ClothingDelete(DeleteView):
     model = Clothing
     pk_url_kwarg = 'clothing_id'
@@ -91,3 +94,11 @@ def add_photo(request,  clothing_id):
       except:
           print('An error occurred uploading file to S3')
   return redirect('clothing_detail', clothing_id=clothing_id)
+
+@method_decorator(login_required, name='dispatch')
+class PhotoDeleteView(DeleteView):
+    model = Photo
+    fields = ('__all__')
+    success_url = reverse_lazy('clothing_all')
+    def get_success_url(self):
+        return reverse_lazy('clothing_all')

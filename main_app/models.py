@@ -23,7 +23,4 @@ class Color(models.Model):
     def __str__(self):
         return self.name
 
-class ComplimentaryColor(models.Model):
-    # colors = 
-    # def __str__(self):
-    #     return self.name
+#class ComplimentaryColor(models.Model):

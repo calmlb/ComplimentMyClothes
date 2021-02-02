@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Search Results</h1>
+
+<ul>
+  {% for item in object_list %}
+  <a href="/clothing/{{ item.id }}">
+    <li>
+      {{ item.name }}
+    </li>
+</a>
+  {% endfor %}
+</ul>
+
+{% endblock %}

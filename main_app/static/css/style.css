@@ -111,3 +111,8 @@
     width: 30%;
     height: 30%;
 }
+
+.add-item {
+  display: flex;
+  justify-content: flex-end;
+}

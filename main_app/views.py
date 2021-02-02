@@ -67,8 +67,6 @@ class ClothingUpdate(UpdateView):
     template_name_suffix = '_update_form'
     success_url = reverse_lazy('clothing_all')
 
-
-
 class ClothingDelete(DeleteView):
     model = Clothing
     pk_url_kwarg = 'clothing_id'
@@ -103,7 +101,7 @@ class PhotoDeleteView(DeleteView):
     fields = ('__all__')
     success_url = reverse_lazy('clothing_all')
     def get_success_url(self):
-        return reverse_lazy('clothing_all')
+      return reverse_lazy('clothing_all')
 
 
 class SearchResultsView(ListView):

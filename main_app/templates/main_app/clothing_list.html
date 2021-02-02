@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 <br>
-<a href="/clothing/add" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+<form action="{% url 'search_results' %}" method="get">
+  <div>
+    <input style="display: inline-block" name="q" type="search" placeholder="Search...">
+  </div>
+</form>
+<br>
+<div class="add-item">
+<a href="/clothing/add" class="waves-effect waves-light btn-large red"><i class="material-icons right">add</i>add item</a>
+</div>
 {% for clothing in object_list %}
 <a href="/clothing/{{ clothing.id }}">
 <div class="card">

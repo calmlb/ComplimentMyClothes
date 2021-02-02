@@ -10,6 +10,7 @@ import boto3
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'cmc-4'
 
@@ -102,3 +103,14 @@ class PhotoDeleteView(DeleteView):
     success_url = reverse_lazy('clothing_all')
     def get_success_url(self):
         return reverse_lazy('clothing_all')
+
+class SearchResultsView(ListView):
+    model = Clothing
+    template_name = 'search_results.html'
+
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = Clothing.objects.filter(
+            Q(name__icontains=query) | Q(color__icontains=query)
+        )
+        return object_list

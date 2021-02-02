@@ -1,18 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Welcome to ComplimentMyClothes</h1>
-
-<br>
 <br>
 
-<div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="https://picsum.photos/id/1/800/300"></a>
-    <a class="carousel-item" href="#two!"><img src="https://picsum.photos/id/2/800/300"></a>
-    <a class="carousel-item" href="#three!"><img src="https://picsum.photos/id/3/800/300"></a>
-    <a class="carousel-item" href="#four!"><img src="https://picsum.photos/id/4/800/300"></a>
-    <a class="carousel-item" href="#five!"><img src="https://picsum.photos/id/5/800/300"></a>
+<div class="carousel carousel-slider center">
+  <div class="carousel-fixed-item center">
+    <a class="btn waves-effect white grey-text darken-text-2">View My Wardrobe</a>
   </div>
+  <div class="carousel-item red white-text" href="#one!">
+    <h2>First Panel</h2>
+    <p class="white-text">Site where you can add your wardrobe to find complimenting items</p>
+  </div>
+  <div class="carousel-item amber white-text" href="#two!">
+    <h2>Second Panel</h2>
+    <p class="white-text">Site where you can add your wardrobe to find complimenting items</p>
+  </div>
+  <div class="carousel-item green white-text" href="#three!">
+    <h2>Third Panel</h2>
+    <p class="white-text">Site where you can add your wardrobe to find complimenting items</p>
+  </div>
+  <div class="carousel-item blue white-text" href="#four!">
+    <h2>Fourth Panel</h2>
+    <p class="white-text">Site where you can add your wardrobe to find complimenting items</p>
+  </div>
+</div>
 
-  <hr />
-  <p>Site where you can add your wardrobe to find complimenting items</p>
+<br>
 {% endblock %}

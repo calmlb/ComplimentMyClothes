@@ -5,104 +5,104 @@
   }
   
   .fullCircle-green {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border: 2px solid grey;
   border-radius: 50%;
   background-color: darkgreen;
 }
 
 .fullCircle-light-blue {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border: 2px solid grey;
   border-radius: 50%;
   background-color: lightblue;
 }
 
 .fullCircle-dark-blue {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border: 2px solid grey;
   border-radius: 50%;
   background-color: darkblue;
 }
 
 .fullCircle-white {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border: 2px solid grey;
   border-radius: 50%;
   background-color: white;
 }
 
 .fullCircle-black {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border: 2px solid grey;
   border-radius: 50%;
   background-color: black;
 }
 
 .fullCircle-grey {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid grey;
     border-radius: 50%;
     background-color: grey;
   }
 
   .fullCircle-purple {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid grey;
     border-radius: 50%;
     background-color: rgb(70, 0, 32)
   }
 
   .fullCircle-brown {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid grey;
     border-radius: 50%;
     background-color: rgb(53, 24, 0);
   }
 
   .fullCircle-orange {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid grey;
     border-radius: 50%;
     background-color: orangered;
   }
 
   .fullCircle-beige {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid grey;
     border-radius: 50%;
     background-color: rgb(207, 192, 151);
   }
 
   .fullCircle-pink {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid grey;
     border-radius: 50%;
     background-color: rgb(202, 160, 192);
   }
 
   .fullCircle-red {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid grey;
     border-radius: 50%;
     background-color: rgb(175, 41, 41);
   }
 
   .fullCircle-yellow {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid grey;
     border-radius: 50%;
     background-color: rgb(233, 171, 1);

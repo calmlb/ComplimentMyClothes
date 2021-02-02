@@ -16,35 +16,49 @@
 <body>
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper deep-orange accent-2">
-        <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;ComplimentMyClothes&nbsp;&nbsp;</a></li>
-        </ul>
-        <ul class="right">
-            <li><a href="{% url 'about' %}">About</a></li>
-            {% if user.is_authenticated %}   
-            <!-- <li><a href="{% url 'home' %}">My Clothing</a></li>  -->
-                <li><a href="{% url 'clothing_all' %}">View My Wardrobe</a></li>
-            <!-- <li><a href="{% url 'clothing_create' %}">Add Clothing</a></li> -->
-                <li><a href="{% url 'logout' %}">Log Out</a></li>
-            {% else %}
-                <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                <li><a href="{% url 'login' %}">Log In</a></li>
-            {% endif %}
-            </ul>
+      <div class="nav-wrapper light-blue darken-4">
+        <a href="/" class="brand-logo">ComplimentMyClothes</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{% url 'about' %}">About</a></li>
+          {% if user.is_authenticated %}   
+          <!-- <li><a href="{% url 'home' %}">My Clothing</a></li>  -->
+              <li><a href="{% url 'clothing_all' %}">View My Wardrobe</a></li>
+          <!-- <li><a href="{% url 'clothing_create' %}">Add Clothing</a></li> -->
+              <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+              <li><a href="{% url 'signup' %}">Sign Up</a></li>
+              <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
   </header>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="{% url 'about' %}">About</a></li>
+    {% if user.is_authenticated %}   
+    <!-- <li><a href="{% url 'home' %}">My Clothing</a></li>  -->
+        <li><a href="{% url 'clothing_all' %}">View My Wardrobe</a></li>
+    <!-- <li><a href="{% url 'clothing_create' %}">Add Clothing</a></li> -->
+        <li><a href="{% url 'logout' %}">Log Out</a></li>
+    {% else %}
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'login' %}">Log In</a></li>
+    {% endif %}
+  </ul>
   <main class="container">
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="page-footer deep-orange accent-2">
+  <footer class="page-footer light-blue darken-4">
     <div class="right">All Rights Reserved, &copy; 2021 ComplimentMyClothes &nbsp;</div>
   </footer>
   <script defer>
   M.AutoInit();
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
   var elems = document.querySelectorAll('.carousel');
   var xinstances = M.Carousel.init(elems, {
                   fullWidth: true,

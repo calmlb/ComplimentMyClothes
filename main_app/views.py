@@ -66,8 +66,6 @@ class ClothingUpdate(UpdateView):
     template_name_suffix = '_update_form'
     success_url = reverse_lazy('clothing_all')
 
-
-
 class ClothingDelete(DeleteView):
     model = Clothing
     pk_url_kwarg = 'clothing_id'

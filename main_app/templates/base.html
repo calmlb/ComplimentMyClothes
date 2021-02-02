@@ -44,16 +44,22 @@
     <div class="right">All Rights Reserved, &copy; 2021 ComplimentMyClothes &nbsp;</div>
   </footer>
   <script defer>
-      M.AutoInit();
-      document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, options);
-  });
+  M.AutoInit();
+  var elems = document.querySelectorAll('.carousel');
+  var xinstances = M.Carousel.init(elems, {
+                  fullWidth: true,
+                  indicators: true,
+                  numVisible: 3,
+                  duration: 500
+                });
 
-  autoplay()   
-function autoplay() {
-    $('.carousel').carousel('next');
-    setTimeout(autoplay, 4500);
+                
+  var myVar = setInterval(myTimer, 5000);
+
+  function myTimer() {
+  var el = document.querySelector(".carousel");
+  var l = M.Carousel.getInstance(el);
+  l.next(1);
 }
   </script>
 </body>

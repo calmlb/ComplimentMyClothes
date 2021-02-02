@@ -56,4 +56,10 @@ class Photo(models.Model):
         return f"Photo for clothing_id: {self.clothing_id} @{self.url}"
 
 # Create inspiration class
+# class Inspiration(models.Model):
+#     url = models.CharField(max_length=200)
+#     description = models.TextField(max_length=100)
+#     clothing = models.ForeignKey(Clothing, on_delete=models.CASCADE)
 
+#     def __str__(self):
+#         return f"Photo for clothing_id: {self.clothing_id} @{self.url}"

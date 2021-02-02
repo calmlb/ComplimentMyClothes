@@ -10,12 +10,16 @@
     <p>{{ clothing.type }}</p>
     <br>
     <p>{{ clothing.color }} </p>
+    <br>
+    <p>{{ clothing.season }}</p>
 </div>
 {% for photo in clothing.photo_set.all %}
+    <div class="uploaded-image">
       <img class="responsive-img card-panel" src="{{photo.url}}">
     {% empty %}
       <div class="card-panel teal-text center-align">No Photos Uploaded</div>
     {% endfor %}
+    </div>
 </div>
 </a>
 {% endfor %}

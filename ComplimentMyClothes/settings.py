@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'ComplimentMyClothes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cmc-6',
+        'NAME': 'cmc-8',
     }
 }
 

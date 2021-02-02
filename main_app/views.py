@@ -91,3 +91,6 @@ def add_photo(request,  clothing_id):
       except:
           print('An error occurred uploading file to S3')
   return redirect('clothing_detail', clothing_id=clothing_id)
+
+# class InspirationList(ListView):
+#   model = 

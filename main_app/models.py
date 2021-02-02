@@ -55,3 +55,5 @@ class Photo(models.Model):
     def __str__(self):
         return f"Photo for clothing_id: {self.clothing_id} @{self.url}"
 
+# Create inspiration class
+

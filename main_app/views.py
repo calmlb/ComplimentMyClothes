@@ -11,6 +11,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+import requests
+import os
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'cmc-4'
 
@@ -37,9 +39,17 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 def home(request):
-  # clothing = Clothing.objects.all()
-  # clothing = Clothing.objects.filter(user=request.user)
-  return render(request, 'home.html')
+   # Weather and IP Lookup API
+  url = "http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}"
+  ipApi_key = os.environ['IPAPI_KEY']
+  ipApi_url = "https://ipapi.co/json/?key={}"
+  ip_data = requests.get(ipApi_url.format(ipApi_key)).json()
+  city = ip_data['city']
+  api_key = os.environ['OPEN_WEATHER_KEY']
+  weather_data = requests.get(url.format(city, api_key)).json()
+  icon = weather_data['weather'][0]['icon']
+
+  return render(request, 'home.html', {'weather_data': weather_data, 'icon': icon,})
 
 class ClothingList(ListView):
     model = Clothing

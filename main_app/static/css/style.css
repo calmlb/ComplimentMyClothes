@@ -1,8 +1,9 @@
 .colors {
     display: flex;
     padding: 20px;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
+  
   
   .fullCircle-green {
   width: 50px;

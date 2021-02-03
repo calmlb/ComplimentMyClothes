@@ -1,11 +1,12 @@
 from django.urls import path, include
 from . import views
-from .views import ClothingList, ClothingCreate, ClothingDetail, ClothingUpdate, ClothingDelete, SearchResultsView
+from .views import ClothingList, ClothingCreate, ClothingDetail, ClothingUpdate, ClothingDelete, SearchResultsView, SearchWeatherView
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('search/', SearchResultsView.as_view(), name='search_results'),
+    path('search-by-weather/', SearchWeatherView.as_view(), name='search_weather_results'),
     path('clothing/', ClothingList.as_view(), name='clothing_all'),
     path('clothing/add/', ClothingCreate.as_view(), name='clothing_create'),
     path('clothing/<int:clothing_id>/', ClothingDetail.as_view(), name='clothing_detail'),

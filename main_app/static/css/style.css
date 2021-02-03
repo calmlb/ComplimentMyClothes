@@ -109,8 +109,8 @@
     background-color: rgb(233, 171, 1);
   }
 .uploaded-image {
-    width: 30%;
-    height: 30%;
+    max-width: 50%;
+    height: auto;
 }
 
 .add-item {

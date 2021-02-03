@@ -23,10 +23,8 @@
 
           <div class="card-content">
               <span class="card-title">{{ clothing.name }}</span> <br>
-              <p>{{ clothing.type }}</p>
-              
+              <p>{{ clothing.type }}</p>   
           </div>
-          
           <div class="uploaded-image">
             {% for photo in clothing.photo_set.all %}
               <img class="responsive-img card-panel" src="{{photo.url}}">

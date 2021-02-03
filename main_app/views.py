@@ -16,6 +16,8 @@ import os
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'cmc-4'
 
+season_query = ''
+
 class ClothingCreate(LoginRequiredMixin, CreateView):
   model = Clothing
   fields = '__all__'
@@ -48,8 +50,8 @@ def home(request):
   api_key = os.environ['OPEN_WEATHER_KEY']
   weather_data = requests.get(url.format(city, api_key)).json()
   icon = weather_data['weather'][0]['icon']
-
-  return render(request, 'home.html', {'weather_data': weather_data, 'icon': icon,})
+  
+  return render(request, 'home.html', {'weather_data': weather_data, 'icon': icon, 'season_query': season_query})
 
 class ClothingList(ListView):
     model = Clothing
@@ -122,3 +124,26 @@ class SearchResultsView(ListView):
             Q(name__icontains=query) | Q(color__icontains=query)
         )
         return object_list
+
+class SearchWeatherView(ListView):
+    model = Clothing
+    template_name = 'search_weather_results.html'
+
+    def get_queryset(self):
+      query = self.request.GET.get('q')
+      query = float(query)
+      print(query)
+      season_query = ''
+      if query <= 8:
+        season_query = 'Winter'
+      elif query >= 9 and query <= 13:
+        season_query = 'Fall'
+      elif query >= 14 and query <= 19:
+        season_query = 'Spring'
+      elif query >= 20:
+        season_query = 'Summer'
+
+      object_list = Clothing.objects.filter(
+        Q(season__icontains=season_query)
+        )
+      return object_list

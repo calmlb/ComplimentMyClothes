@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% block content %}
 <br>
@@ -40,11 +41,9 @@
             <form action="{% url 'search_weather_results' %}" method="get">
               <div>
                 <p>{{ season_query }}</p>
-                <!-- <input style="display: inline-block" name="q" type="text" placeholder="Search..." value="{{weather_data.main.feels_like}}"> -->
-                <button name="q" value="{{weather_data.main.feels_like}}">View Wardrobe Suggestions</button>
+                <button class="btn wave-effect" name="q" value="{{weather_data.main.feels_like}}">View Wardrobe Suggestions</button>
               </div>
             </form>
-          <!-- <a href="#" class="btn waves-effect waves-green">View Wardrobe Suggestions</a> -->
         </div>
         </div>
     </div>

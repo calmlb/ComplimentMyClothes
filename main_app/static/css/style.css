@@ -1,11 +1,9 @@
-.colors {
-    display: flex;
-    padding: 20px;
-    justify-content: space-around;
-  }
-  
-  
-  .fullCircle-green {
+.pass {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fullCircle-green {
   width: 50px;
   height: 50px;
   border: 2px solid grey;
@@ -116,4 +114,10 @@
 .add-item {
   display: flex;
   justify-content: flex-end;
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

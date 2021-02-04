@@ -20,7 +20,7 @@ season_query = ''
 
 class ClothingCreate(LoginRequiredMixin, CreateView):
   model = Clothing
-  fields = '__all__'
+  fields = ['name', 'type', 'color', 'season']
   def form_valid(self, form):
     form.instance.user = self.request.user 
     return super().form_valid(form)
@@ -132,7 +132,6 @@ class SearchWeatherView(ListView):
     def get_queryset(self):
       query = self.request.GET.get('q')
       query = float(query)
-      print(query)
       season_query = ''
       if query <= 8:
         season_query = 'Winter'

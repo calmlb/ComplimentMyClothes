@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Search Results</h1>
+<h1>Search Results {{ query }}</h1>
 
 <div class="row">
   {% for clothing in object_list %}

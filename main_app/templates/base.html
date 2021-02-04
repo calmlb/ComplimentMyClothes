@@ -26,9 +26,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}   
-          <!-- <li><a href="{% url 'home' %}">My Clothing</a></li>  -->
               <li><a href="{% url 'clothing_all' %}">View My Wardrobe</a></li>
-          <!-- <li><a href="{% url 'clothing_create' %}">Add Clothing</a></li> -->
               <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
               <li><a href="{% url 'signup' %}">Sign Up</a></li>
@@ -54,7 +52,7 @@
     {% block content %}
     {% endblock %}
   </main>
-  
+  <br>
   <footer class="page-footer light-blue darken-4">
     <div class="right">All Rights Reserved, &copy; 2021 ComplimentMyClothes &nbsp;</div>
 

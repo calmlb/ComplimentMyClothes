@@ -10,7 +10,7 @@
       <div class="card" style="height: 400px;">
       <div class="card-image">
         {% for photo in clothing.photo_set.all %}
-      <img style="height: 250px; width: auto;" class="responsive-img card-panel" src="{{photo.url}}">
+      <img style="height: 250px; width: auto;" class="responsive-img" src="{{photo.url}}">
       {% empty %}
       <div class="card-panel teal-text center-align">No Photos Uploaded</div>
       {% endfor %}

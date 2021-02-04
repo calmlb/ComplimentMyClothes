@@ -121,7 +121,7 @@ class SearchResultsView(ListView):
     def get_queryset(self): # new
         query = self.request.GET.get('q')
         object_list = Clothing.objects.filter(
-            Q(name__icontains=query) | Q(color__icontains=query)
+            Q(name__icontains=query) | Q(color__icontains=query) | Q(season__icontains=query) | Q(type__icontains=query)
         )
         return object_list
 

@@ -74,7 +74,7 @@ class ClothingDetail(DetailView):
 
 class ClothingUpdate(UpdateView):
     model = Clothing
-    fields = '__all__'
+    fields = ['name', 'type', 'color', 'season']
     pk_url_kwarg = 'clothing_id'
     template_name_suffix = '_update_form'
     success_url = reverse_lazy('clothing_all')
@@ -120,10 +120,12 @@ class SearchResultsView(ListView):
 
     def get_queryset(self): # new
         query = self.request.GET.get('q')
-        object_list = Clothing.objects.filter(
-            Q(name__icontains=query) | Q(color__icontains=query) | Q(season__icontains=query) | Q(type__icontains=query)
+        object_list = Clothing.objects.filter(Q(name__icontains=query) | Q(color__icontains=query) | Q(season__icontains=query) | Q(type__icontains=query)
         )
-        return object_list
+        if self.request.user.is_authenticated:
+          return object_list.filter(user=self.request.user)
+        else:
+          return Clothing.objects.none()
 
 class SearchWeatherView(ListView):
     model = Clothing
@@ -145,4 +147,7 @@ class SearchWeatherView(ListView):
       object_list = Clothing.objects.filter(
         Q(season__icontains=season_query)
         )
-      return object_list
+      if self.request.user.is_authenticated:
+        return object_list.filter(user=self.request.user)
+      else:
+        return Clothing.objects.none()

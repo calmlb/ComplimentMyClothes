@@ -8,12 +8,12 @@
 
 ComplimentMyClothes is a web application designed to support users in organizing and finding the perfect pairings for every article of clothing in their wordrobe. Each item is provided with a list of complimentary colours and a items according to the current temperature making getting dressed everyday easier! 
 
-Users can populate their wordrobes by uploading images of their apparel and additional information like: **clothing type, colour, and season.** The search feature on the wordrobe page can also be used for easier access to the particular items the user is looking for. Furthermore, each item can be deleted and updated throughout the process of using the website. 
-
 Find ComplimentMyClothes here: https://complimentmyclothes.herokuapp.com/
 
 ---
 #### **Functionalities of the Application:**
+
+Users can populate their wordrobes by uploading images of their apparel and additional information like: **clothing type, colour, and season.** The search feature on the wordrobe page can also be used for easier access to the particular items the user is looking for. Furthermore, each item can be deleted and updated throughout the process of using the website. 
 
 #### 1. User can create an account, log in and log of the website: 
 <img src="https://i.imgur.com/akR1C74.png">

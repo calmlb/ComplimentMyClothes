@@ -15,22 +15,25 @@ Find ComplimentMyClothes here: https://complimentmyclothes.herokuapp.com/
 ---
 #### **Functionalities of the Application:**
 
-1. User can create an account, log in and log of the website: 
+##### 1. User can create an account, log in and log of the website: 
 <img src="https://i.imgur.com/akR1C74.png">
 <img src="https://i.imgur.com/oTqzvTj.png">
+---
 
-2. User can upload, update and delete their articles of clothing:
+##### 2. User can upload, update and delete their articles of clothing:
 <img src="https://i.imgur.com/8H6cA25.png">
 <img src="https://i.imgur.com/5edLOUp.png">
+---
 
-3. All items in the wordrobe can also be viewed, browsed and searched through: 
+##### 3. All items in the wordrobe can also be viewed, browsed and searched through: 
 <img src="https://i.imgur.com/lkutURc.png">
 
-4. User can also be provided with items approriate for the current temperature:
+##### 4. User can also be provided with items approriate for the current temperature:
 <img src="https://i.imgur.com/hQjNINH.png">
 <img src="https://i.imgur.com/Rr26FCl.png">
+---
 
-5. The application can be used on mobile devices:
+##### 5. The application can be used on mobile devices:
 <img src="https://i.imgur.com/s8sI1CI.png">
 ---
 

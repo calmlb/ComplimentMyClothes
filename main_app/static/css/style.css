@@ -1,11 +1,19 @@
-.colors {
-    display: flex;
-    padding: 20px;
-    justify-content: space-around;
-  }
-  
-  
-  .fullCircle-green {
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pass {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.banner {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.fullCircle-green {
   width: 50px;
   height: 50px;
   border: 2px solid grey;
@@ -118,3 +126,26 @@
   justify-content: flex-end;
 }
 
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.carousel-fixed-item a{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.carousel-fixed-item a:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}

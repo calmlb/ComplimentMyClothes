@@ -1,16 +1,29 @@
+
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Search Results</h1>
+<h1>Based On Weather</h1>
 
-<ul>
-  {% for item in object_list %}
-  <a href="/clothing/{{ item.id }}">
-    <li>
-      {{ item.name }}
-    </li>
-</a>
+<div class="row">
+  {% for clothing in object_list %}
+    <div class="col s6 m6 l4">
+      <a href="/clothing/{{ clothing.id }}">
+      <div class="card" style="height: 400px;">
+      <div class="card-image">
+        {% for photo in clothing.photo_set.all %}
+      <img style="height: 250px; width: auto;" class="responsive-img" src="{{photo.url}}">
+      {% empty %}
+      <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+      {% endfor %}
+    </div>
+    <div class="card-content">
+      <h6>{{clothing.name}}</h6>
+      <p>Worn in {{ clothing.season }}</p>
+    </div>
+      </div>
+    </a>
+    </div>
   {% endfor %}
-</ul>
+  </div>
 
 {% endblock %}

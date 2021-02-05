@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/clothing/'
-LOGOUT_REDIRECT_URL = '/clothing/'
+LOGOUT_REDIRECT_URL = '/'
 
 import environ
 environ.Env()

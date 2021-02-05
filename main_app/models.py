@@ -18,14 +18,20 @@ COLORS = (
     )
 
 TYPE = (
-    ('tshirt', 'T-Shirt'),
-    ('sweater', 'Sweater'),
-    ('sweatshirt', 'Sweatshirt'),
-    ('jacket', 'Jacket'),
-    ('jeans', 'Jeans'),
-    ('leggings', 'Leggings'), 
-    ('shorts', 'Shorts')
-    #  etc... 
+    ('T-Shirt', 'T-Shirt'),
+    ('Sweater', 'Sweater'),
+    ('Sweatshirt', 'Sweatshirt'),
+    ('Jacket', 'Jacket'),
+    ('Jeans', 'Jeans'),
+    ('Leggings', 'Leggings'), 
+    ('Shorts', 'Shorts'),
+    ('Dress Pants', 'Dress Pants'),
+    ('Dress', 'Dress'),
+    ('Skirt', 'Skirt'),
+    ('Blouse', 'Blouse'),
+    ('Parka', 'Parka'),
+    ('Coat', 'Coat'),
+    ('Tank Top', 'Tank Top'),
     )
 
 SEASON = (
@@ -37,7 +43,7 @@ SEASON = (
 
 class Clothing(models.Model):
     name = models.CharField(max_length=100)
-    type = models.CharField(max_length=10, choices=TYPE, default=TYPE[0][0])
+    type = models.CharField(max_length=20, choices=TYPE, default=TYPE[0][0])
     color = models.CharField(max_length=10, choices=COLORS, default=COLORS[0][0])
     season = models.CharField(max_length=10, choices=SEASON, default=SEASON[0][0])
     user = models.ForeignKey(User, on_delete=models.CASCADE)

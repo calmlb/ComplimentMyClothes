@@ -7,6 +7,8 @@
 /mediafiles/*
 __pycache__/
 /.vscode/
+/.aws/
+credentials
 
 # coverage result
 .coverage

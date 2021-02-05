@@ -6,15 +6,16 @@
 <div class="carousel carousel-slider center">
   <div class="carousel-fixed-item center">
     {% if user.is_authenticated %}   
-    <a class="btn waves-effect white black-text darken-text-2 modal-trigger" href="#modal1"><i class="material-icons left">cloud_queue</i>Weather Based Wardrobe</a>
-    <a class="btn waves-effect white black-text darken-text-2" href="{% url 'clothing_all' %}"><i class="material-icons left">loyalty</i>View My Wardrobe</a>
+    <a class="btn waves-effect darken-text-2 modal-trigger home-buttons" href="#modal1"><i class="material-icons left">cloud_queue</i>Weather Based Wardrobe</a>
+    <a class="btn waves-effect darken-text-2 home-buttons" href="{% url 'clothing_all' %}"><i class="material-icons left">loyalty</i>View My Wardrobe</a>
 {% else %}
     <a class="btn waves-effect white grey-text darken-text-2" href="{% url 'signup' %}"><i class="material-icons left">login</i>Sign Up</a>
     <a class="btn waves-effect white grey-text darken-text-2" href="{% url 'login' %}"><i class="material-icons left">vpn_key</i>Log In</a>
 {% endif %}
   </div>
-  <div class="carousel-item red white-text banner" href="#one!">
-    <h2>Welcome to ComplimentMyClothes</h2>
+  <div class="carousel-item white-text banner" href="#one!">
+    <h2>Welcome to Compliment My Clothes</h2>
+
     <p class="white-text container">Compliment My Clothes (CMC) is here to help you with concerns and challenges when it comes to dressing. Use this app to help you with colour coordination and style suggestions. You can even use the built-in weather widget and clothing search to make sure that you're dressed for the weather. Enjoy yourself!</p>
   </div>
 </div>
@@ -32,15 +33,12 @@
         <div class="col s6">
           <div class="center">
             <form action="{% url 'search_weather_results' %}" method="get">
-              <div>
+              <div class="weather-wardrobe">
                 <button class="btn wave-effect" name="q" value="{{weather_data.main.feels_like}}">View Wardrobe Suggestions</button>
               </div>
             </form>
         </div>
         </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
 

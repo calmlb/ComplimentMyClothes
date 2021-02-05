@@ -1,7 +1,9 @@
 # Project 3: ComplimentMyClothes
-## Development Team: Hadi Mirza, Eric Mathias, Jasnoor Nagpal
-## Design Team: Hannah Lee, Michelle Usdenski
-### **Introduction:**
+---
+### Development Team: Hadi Mirza, Eric Mathias, Jasnoor Nagpal
+### Design Team: Hannah Lee, Michelle Usdenski
+---
+#### **Introduction:**
 
 
 

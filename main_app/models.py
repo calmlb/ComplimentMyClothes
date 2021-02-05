@@ -35,10 +35,10 @@ TYPE = (
     )
 
 SEASON = (
-    ('spring', 'Spring'),
-    ('summer', 'Summer'),
-    ('fall', 'Fall'),
-    ('winter', 'Winter'),
+    ('Spring', 'Spring'),
+    ('Summer', 'Summer'),
+    ('Fall', 'Fall'),
+    ('Winter', 'Winter'),
     )
 
 class Clothing(models.Model):

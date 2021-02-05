@@ -36,7 +36,7 @@ Find ComplimentMyClothes here: https://complimentmyclothes.herokuapp.com/
 
 ---
 
-##### 5. The application can be used on mobile devices:
+#### 5. The application can be used on mobile devices:
 <img src="https://i.imgur.com/s8sI1CI.png">
 
 ---

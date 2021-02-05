@@ -11,6 +11,37 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  background: rgba(0,78,137,0.8);
+}
+
+.nav-wrapper {
+  background: rgb(231,99,99);
+  background: linear-gradient(51deg, rgba(231,99,99,1) 0%, rgba(226,70,70,1) 47%, rgba(255,168,0,1) 100%);
+}
+
+#mobile-demo {
+  background: rgb(231,99,99);
+  background: linear-gradient(51deg, rgba(231,99,99,1) 0%, rgba(226,70,70,1) 47%, rgba(255,168,0,1) 100%);
+}
+
+.weather-wardrobe button {
+  background: rgb(231,99,99);
+  background: linear-gradient(51deg, rgba(231,99,99,1) 0%, rgba(226,70,70,1) 47%, rgba(255,168,0,1) 100%);
+}
+
+.home-buttons {
+  background: rgb(204, 230, 244);
+  color: black;
+}
+
+.home-buttons:hover {
+  background-color: rgba(255,168,0,1);
+}
+
+.page-footer {
+  height: 60px;
+  background: rgb(231,99,99);
+  background: linear-gradient(51deg, rgba(231,99,99,1) 0%, rgba(226,70,70,1) 47%, rgba(255,168,0,1) 100%);
 }
 
 .fullCircle-green {

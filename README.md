@@ -6,7 +6,7 @@
 ---
 #### **Introduction:**
 
-ComplimentMyClothes is a web application designed to support users in organizing and finding the perfect pairings for every article of clothing in their wordrobe. Each item is provided with a list of complimentary colours and a items according to the current temperature making getting dressed everyday easier! 
+ComplimentMyClothes is a web application designed to support users in organizing and finding the perfect pairings for every article of clothing in their wordrobe. Each item is provided with a list of complimentary colours and items according to the current temperature, making getting dressed everyday easier! 
 
 Find ComplimentMyClothes here: https://complimentmyclothes.herokuapp.com/
 

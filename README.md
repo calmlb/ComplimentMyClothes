@@ -43,12 +43,7 @@ Users can populate their wordrobes by uploading images of their apparel and addi
 
 #### **Technologies used for this Application:**
 
-Python
-Django
-Materialize 
-Github
-Heroku
-Amazon S3
-Boto3???
+Python - Django - MaterializeCSS - Github - Heroku - Google OAuth - Amazon AWS3 - OpenWeather API
+
 
 
